@@ -3,6 +3,7 @@ package startup.ir.seotools.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Data
 @Entity
@@ -23,8 +24,8 @@ public class Category {
     private int weight;
     private String iconPath;
 
-    @OneToOne(mappedBy = "category")
-    private News news;
+    @OneToMany(mappedBy = "category")
+    private Collection<News> news;
 
 
 }

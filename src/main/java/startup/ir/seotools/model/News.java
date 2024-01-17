@@ -24,7 +24,7 @@ public class News {
     private String title;
     private String newsImage;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 }

@@ -18,7 +18,7 @@ public class CategoryController {
     }
 
     @GetMapping(value = "/category")
-    public String firstRest(){
+    public String category(){
 
         return new Gson().toJson(categoryRepository.findAll());
     }

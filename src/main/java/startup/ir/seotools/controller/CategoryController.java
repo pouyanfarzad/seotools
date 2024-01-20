@@ -3,7 +3,6 @@ package startup.ir.seotools.controller;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import startup.ir.seotools.model.Category;
 import startup.ir.seotools.repository.CategoryRepository;
 
 @RestController
@@ -19,7 +18,6 @@ public class CategoryController {
 
     @GetMapping(value = "/category")
     public String category(){
-
         return new Gson().toJson(categoryRepository.findAll());
     }
 

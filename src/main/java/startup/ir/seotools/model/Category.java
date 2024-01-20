@@ -9,11 +9,6 @@ import java.util.Collection;
 @Entity
 public class Category {
 
-    public Category(String name, int weight) {
-        this.name = name;
-        this.weight = weight;
-    }
-
     public Category() {
     }
 
@@ -23,9 +18,4 @@ public class Category {
     private String name;
     private int weight;
     private String iconPath;
-
-    @OneToMany(mappedBy = "category")
-    private Collection<News> news;
-
-
 }

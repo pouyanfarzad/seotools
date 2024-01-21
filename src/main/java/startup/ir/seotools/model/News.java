@@ -3,7 +3,6 @@ package startup.ir.seotools.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Data
 @Entity
@@ -15,7 +14,10 @@ public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int category;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     private String newsUrl;
     private String title;
     private String newsImage;
